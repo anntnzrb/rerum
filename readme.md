@@ -1,8 +1,8 @@
-# notas de java (poo)
+# notas de Java (poo)
 
 ## programa de ejemplo
 
-en el siguiente bloque de código se muestra un programa básico en java
+en el siguiente bloque de código se muestra un programa básico en Java
 
 ```java
 public class prog001 {
@@ -51,9 +51,9 @@ public class prog001 {
 | _float_      | 4 byte  | hasta 7 decimales  |
 | _double_     | 8 bytes | hasta 16 decimales |
 
-:exclamation: por defecto, Java considera a todos los dígitos decimales
-como double, para utilizar específicamente `float` es necesario agregar una `f`
-al final del dígito.
+> :exclamation: por defecto, Java considera a todos los dígitos decimales
+> como double, para utilizar específicamente `float` es necesario agregar una `f`
+> al final del dígito.
 
 _e.g_ :
 
@@ -90,6 +90,10 @@ _e.g_ :
 
 ## estilo de codificación
 
-[:link: suckless.org/coding_style](https://suckless.org/coding_style/)
+:link: [Java Programming Styles](https://youtu.be/OXYT01qrDrc)
+:pencil:[Neso Academy](https://www.youtube.com/user/nesoacademy/)
 
-[:link: Java Programming Styles - Neso Academy](https://youtu.be/OXYT01qrDrc)
+:link: [suckless.org/coding_style](https://suckless.org/coding_style/)
+
+:link: [c-code-style](https://github.com/MaJerle/c-code-style)
+:pencil:[MaJerle](https://github.com/MaJerle)
