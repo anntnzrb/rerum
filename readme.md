@@ -16,7 +16,7 @@ public class prog001 {
 :hash: `hey`
 
 > :exclamation: el nombre del archivo (`prog001.java`) debe ser igual al nombre de
-> la class (en el caso de ser un **class pública**)
+> la class (en el caso de ser una **class pública**)
 > [:information_source:](https://stackoverflow.com/a/2324915)
 
 :question: **qué es System.out?**
@@ -53,7 +53,7 @@ public class prog001 {
 
 > :exclamation: por defecto, Java considera a todos los dígitos decimales
 > como double, para utilizar específicamente `float` es necesario agregar una `f`
-> al final del dígito.
+> al final del dígito
 
 _e.g_ :
 
@@ -71,7 +71,7 @@ _e.g_ :
 | ------------ | ------ | ----------------------------- |
 | _boolean_    | 1 bit  | true :left_right_arrow: false |
 
-![data types in java](/lib/Data-types-in-Java.png)
+![data types in java](./lib/data-types-in-java.jpg)
 
 ## modificadores de acceso
 
