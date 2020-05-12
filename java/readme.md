@@ -35,25 +35,29 @@ public class prog001 {
 
 **enteros**:
 
-| tipo de dato | tamaño  | rango                                            |
-| ------------ | ------- | ------------------------------------------------ |
-| _byte_       | 1 byte  | -128 :left_right_arrow: +127                     |
-| _short_      | 2 bytes | -32768 :left_right_arrow: +32767                 |
-| _int_        | 4 bytes | -2,147,483,648 :left_right_arrow: +2,147,483,647 |
-| _long_       | 8 bytes | ~-9e18 :left_right_arrow: ~+9e18                 |
+| tipo de dato | tamaño  | rango                                                          |
+| ------------ | ------- | -------------------------------------------------------------- |
+| _byte_       | 1 byte  | -128 :left_right_arrow: +127                                   |
+| _short_      | 2 bytes | -32768 :left_right_arrow: +32767                               |
+| _int_        | 4 bytes | -2147483648 :left_right_arrow: +2147483647                     |
+| _long_       | 8 bytes | -9223372036854775808L :left_right_arrow: +9223372036854775807L |
+
+> :exclamation: por defecto, Java considera a todos los números que no tengan
+> decimales como `int`, para utilizar específicamente `long` es necesario agregar
+> una `l` o `L` al final del dígito
 
 ---
 
 **decimales**:
 
-| tipo de dato | tamaño  | rango              |
-| ------------ | ------- | ------------------ |
-| _float_      | 4 byte  | hasta 7 decimales  |
-| _double_     | 8 bytes | hasta 16 decimales |
+| tipo de dato | tamaño  | dígitos significativos                    |
+| ------------ | ------- | ----------------------------------------- |
+| _float_      | 4 byte  | ~-3.40e-38f :left_right_arrow: ~+3.40e38f |
+| _double_     | 8 bytes | ~-1.79e-308 :left_right_arrow: ~+1.79e308 |
 
 > :exclamation: por defecto, Java considera a todos los dígitos decimales
-> como double, para utilizar específicamente `float` es necesario agregar una `f`
-> al final del dígito
+> como `double`, para utilizar específicamente `float` es necesario agregar una
+> `f` o `F` al final del dígito
 
 _e.g_ :
 
@@ -61,13 +65,25 @@ _e.g_ :
 
 **caracteres**:
 
-| tipo de dato | tamaño | rango                     |
-| ------------ | ------ | ------------------------- |
-| _char_       | 2 byte | exclusivamente 1 caracter |
+| tipo de dato | tamaño  | rango                                                                           |
+| ------------ | ------- | ------------------------------------------------------------------------------- |
+| _char_       | 2 bytes | (UNICODE) '\u0000' :left_right_arrow: '\uffff' **ó** 0 :left_right_arrow: 65535 |
+
+_e.g_ :
+
+- ```java
+  char c1 = 'N';  /* N */
+  char c2 = 'n';  /* n */
+  /* (UNICODE) */
+  char c1u_a = 78;       /* N */
+  char c2u_a = 110;      /* n */
+  char c1u_b = '\u004E'; /* N */
+  char c2u_b = '\u006E'; /* n */
+  ```
 
 **booleano**:
 
-| tipo de dato | tamaño | rango                         |
+| tipo de dato | tamaño | características               |
 | ------------ | ------ | ----------------------------- |
 | _boolean_    | 1 bit  | true :left_right_arrow: false |
 
