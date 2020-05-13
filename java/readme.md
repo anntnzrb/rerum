@@ -1,37 +1,8 @@
 # notas de Java (poo)
 
-## programa de ejemplo
+## :large_orange_diamond: tipos de datos
 
-en el siguiente bloque de código se muestra un programa básico en Java
-
-```java
-public class prog001 {
-    public static void
-    main(String[] args) {
-        System.out.println("hey");
-    }
-}
-```
-
-:hash: `hey`
-
-> :exclamation: el nombre del archivo (`prog001.java`) debe ser igual al nombre de
-> la class (en el caso de ser una **class pública**)
-> [:information_source:](https://stackoverflow.com/a/2324915)
-
-:question: **qué es System.out?**
-
-- `System` es una _clase_
-
-- `out` es un _objeto_
-
-- `print()` ; `println()` ; `...` son _métodos_ del _objeto_ `out`
-
-`System.out.println()`
-
-## [:link:](https://www.geeksforgeeks.org/data-types-in-java/) tipos de datos
-
-### datos primitivos
+### :small_blue_diamond: datos primitivos
 
 **enteros**:
 
@@ -45,6 +16,10 @@ public class prog001 {
 > :exclamation: por defecto, Java considera a todos los números que no tengan
 > decimales como `int`, para utilizar específicamente `long` es necesario agregar
 > una `l` o `L` al final del dígito
+
+_e.g_ :
+
+- `long numero = 2147483648L;`
 
 ---
 
@@ -61,7 +36,7 @@ public class prog001 {
 
 _e.g_ :
 
-- `float decimal = 9.8f;`
+- `float decimal = 9.8F;`
 
 **caracteres**:
 
@@ -89,12 +64,56 @@ _e.g_ :
 
 ![data types in java](./lib/data-types-in-java.jpg)
 
-## modificadores de acceso
+## :large_orange_diamond: classes
 
-:question: sirven para restringir el acceso a los miembros de una clase
+### :small_blue_diamond: Scanner
+
+la class `Scanner` permite ingresar información através del teclado, ésta es
+perteneciente al paquete `java.util`
+
+- importar class `Scanner`:
+
+  - `import java.util.Scanner;`
+
+- crear una nueva instancia de la class `Scanner`:
+
+  - `Scanner input = new Scanner(System.in);`
+  - donde `input` puede ser cualaquier nombre (similar a crear una variable)
+
+#### :small_red_triangle_down: métodos
+
+es necesario utilizar diferentes métodos para guardar diferentes tipos de datos
+
+- datos numéricos:
+
+  - ```java
+    input.nextByte();
+    input.nextShort();
+    input.nextInt();
+    input.nextLong();
+    input.nextFloat();
+    input.nextDouble();
+    ```
+
+- cadenas de caracteres:
+
+  - ```java
+    input.next();     /* acepta caracteres hasta encontrar un espacio */
+    input.nextLine(); /* acepta múltiples palabras */
+    ```
+
+- booleanos:
+
+  - ```java
+    input.nextBoolean();
+    ```
+
+## :large_orange_diamond: modificadores de acceso
+
 [:information_source:](https://javadesdecero.es/poo/modificadores-de-acceso/)
+sirven para restringir el acceso a los miembros de una clase
 
-**características**:
+### :small_blue_diamond: características
 
 - ayudan a evitar el mal uso de un objeto
 - pueden evitar que se asignen valores incorrectos a esos datos
@@ -104,7 +123,40 @@ _e.g_ :
 | public                | sí      | sí    | sí        |
 | private               | no      | sí    | no        |
 
-## estilo de codificación
+## :large_orange_diamond: random
+
+:information_source: sección donde se puede encontrar contenido misceláneo
+
+### :small_blue_diamond: programa de ejemplo
+
+en el siguiente bloque de código se muestra un programa básico en Java
+
+```java
+public class prog001 {
+    public static void
+    main(String[] args) {
+        System.out.println("hey");
+    }
+}
+```
+
+:hash: `hey`
+
+> :exclamation: el nombre del archivo (`prog001.java`) debe ser igual al nombre de
+> la class (en el caso de ser una **class pública**)
+> [:information_source:](https://stackoverflow.com/a/2324915)
+
+### :small_blue_diamond: qué es System.out?
+
+- `System` es una _clase_
+
+- `out` es un _objeto_
+
+- `print()` ; `println()` ; `...` son _métodos_ del _objeto_ `out`
+
+`System.out.println()`
+
+## :large_orange_diamond: estilo de codificación
 
 :link: [Java Programming Styles](https://youtu.be/OXYT01qrDrc)
 :pencil:[Neso Academy](https://www.youtube.com/user/nesoacademy/)
