@@ -68,8 +68,8 @@ _e.g_ :
 
 ### :small_blue_diamond: Scanner
 
-la class `Scanner` permite ingresar información através del teclado, ésta es
-perteneciente al paquete `java.util`
+la class `Scanner` permite ingresar información através del teclado, ésta
+pertenece al paquete `java.util`
 
 - importar class `Scanner`:
 
@@ -78,7 +78,7 @@ perteneciente al paquete `java.util`
 - crear una nueva instancia de la class `Scanner`:
 
   - `Scanner input = new Scanner(System.in);`
-  - donde `input` puede ser cualaquier nombre (similar a crear una variable)
+  - `input` puede ser cualaquier nombre (similar a crear una variable)
 
 #### :small_red_triangle_down: métodos
 
