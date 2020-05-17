@@ -1,6 +1,4 @@
-package app;
-
-public class external {
+public class External {
     public static void
     main(String[] args) {
         System.out.println("he-ya desde otra clase");
