@@ -1,5 +1,3 @@
-package app;
-
 /* notar que no es posible correr esta clase ya que no hay metodo main() */
 
 public class Me {
