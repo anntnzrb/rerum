@@ -1,10 +1,3 @@
-package app;
-/*
- *
- *
- */
-
-
 public class ConsultaMedica {
     public static void
     main(String[] args) {
