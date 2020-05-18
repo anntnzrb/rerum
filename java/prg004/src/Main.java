@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class Main {
     public static void
     main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanf = new Scanner(System.in);
 
-        String data = input.next();
+        String data = scanf.next();
         System.out.printf("%s%n", data);
+        scanf.close();
     }
 }
