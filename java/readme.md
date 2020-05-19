@@ -165,3 +165,5 @@ public class prog001 {
 
 :link: [c-code-style](https://github.com/MaJerle/c-code-style)
 :pencil:[MaJerle](https://github.com/MaJerle)
+
+:link: [Hungarian Notation to Java](https://www.developer.com/java/ent/article.php/615891/Applying-Hungarian-Notation-to-Java-programs-Part-1.htm)
