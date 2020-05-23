@@ -2,12 +2,14 @@
 
 public class Me {
     public static void
-    sayName() {
+    sayName()
+    {
         System.out.println("annt");
     }
 
     public static void
-    sayAge() {
+    sayAge()
+    {
         System.out.println(20);
     }
 }

@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void
-    main(String[] args) {
+    main(String[] args)
+    {
         Scanner scanf = new Scanner(System.in);
 
         int iN_empleados;
@@ -34,7 +35,6 @@ public class Main {
             dBonus =
                 (arrSueldo[i] <=
                  SUELDO_BASICO) ? (100) : (arrSueldo[i] * 0.15);
-
 
             System.out.printf("empleado: '%d' $%.4f bonus = %.4f%n",
                               i + 1, arrSueldo[i], dBonus);
