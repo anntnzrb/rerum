@@ -64,6 +64,39 @@ _e.g_ :
 
 ![data types in java](./lib/data-types-in-java.jpg)
 
+## :large_orange_diamond: arreglos
+
+son colecciones de elementos
+
+### :small_blue_diamond: características
+
+- elementos del mismo tipo
+- tamaño fijo
+- multi-dimensionals
+
+### sintaxis
+
+`tipo_dato[] var = new tipo_dato[n]`
+
+- `tipo_dato` -> `short`,`int`,`double`, ...
+- `var` -> nombre del arreglo
+- `n` -> tamaño del arreglo
+
+```java
+/* 1 dimension */
+
+/* declaracion y creacion del arreglo */
+int[] arr1 = new int[10]; /* arreglo de tamaño 10 */
+
+/* declaracion */
+int[] arr2;
+/* creacion */
+arr2 = new int[5]; /* arreglo de tamaño 5 */
+
+/* asignacion de valores al crear arreglo */
+String[] arr3 = {"uno", "annt", "hey"};
+```
+
 ## :large_orange_diamond: classes
 
 ### :small_blue_diamond: Scanner
@@ -142,8 +175,8 @@ public class prog001 {
 
 :hash: `hey`
 
-> :exclamation: el nombre del archivo (`prog001.java`) debe ser igual al nombre de
-> la class (en el caso de ser una **class pública**)
+> :exclamation: el nombre del archivo (`prog001.java`) debe ser igual al nombre
+> de la class (en el caso de ser una **class pública**)
 > [:information_source:](https://stackoverflow.com/a/2324915)
 
 ### :small_blue_diamond: qué es System.out?
