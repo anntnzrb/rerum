@@ -1,6 +1,7 @@
 public class ConsultaMedica {
     public static void
-    main(String[] args) {
+    main(String[] args)
+    {
         String nombre = "annt";
         String identificador = "1234567890"; /* pudiera usarse un entero */
         short edad = 20;                     /* pudiera usarse byte */
