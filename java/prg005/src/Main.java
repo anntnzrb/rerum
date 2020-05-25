@@ -6,40 +6,40 @@ public class Main {
     {
         Scanner scanf = new Scanner(System.in);
 
-        int iN_empleados;
+        int n_empleados;
         final double SUELDO_BASICO = 375.0;
-        double dBonus;
-        double dTotal = 0;
+        double bonus;
+        double total = 0;
 
         System.out.println("ingrese el numero de empleados");
-        iN_empleados = scanf.nextInt();
+        n_empleados = scanf.nextInt();
 
-        double[] arrSueldo = new double[iN_empleados];
+        double[] sueldo = new double[n_empleados];
 
-        for (int i = 0; i < iN_empleados; i++) {
+        for (int i = 0; i < n_empleados; i++) {
             System.out.printf("ingrese el salario del empleado '%d' %n",
                               (i + 1));
-            arrSueldo[i] = scanf.nextDouble();
+            sueldo[i] = scanf.nextDouble();
         }
         scanf.close();
 
-        for (int i = 0; i < iN_empleados; i++) {
+        for (int i = 0; i < n_empleados; i++) {
             /*
-             * if (arrSueldo[i] <= SUELDO_BASICO ) {
-             *  dBonus = 100;
+             * if (sueldo[i] <= SUELDO_BASICO ) {
+             *  bonus = 100;
              * } else {
-             *  dBonus = (arrSueldo[i] * 0.15);
+             *  bonus = (sueldo[i] * 0.15);
              * }
              */
 
-            dBonus =
-                (arrSueldo[i] <=
-                 SUELDO_BASICO) ? (100) : (arrSueldo[i] * 0.15);
+            bonus =
+                (sueldo[i] <=
+                 SUELDO_BASICO) ? (100) : (sueldo[i] * 0.15);
 
             System.out.printf("empleado: '%d' $%.4f bonus = %.4f%n",
-                              i + 1, arrSueldo[i], dBonus);
-            dTotal = arrSueldo[i] + dBonus;
-            System.out.printf("total a pagar: %.4f%n", dTotal);
+                              i + 1, sueldo[i], bonus);
+            total = sueldo[i] + bonus;
+            System.out.printf("total a pagar: %.4f%n", total);
         }
     }
 }
