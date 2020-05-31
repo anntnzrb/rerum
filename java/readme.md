@@ -141,20 +141,196 @@ es necesario utilizar diferentes métodos para guardar diferentes tipos de datos
     input.nextBoolean();
     ```
 
-## :large_orange_diamond: modificadores de acceso
+## :large_orange_diamond: programación orientada a objetos (poo)
+
+### :small_blue_diamond: características
+
+existen **4** conceptos fundamentos en la programación orientada a objetos:
+
+- encapsulamiento
+- herencia
+- polimorfismo
+- abstraccion
+
+los objetos tienen 2 propiedades:
+
+- atributos
+- métodos
+
+asumamos a un :racehorse: **caballo** como un objeto:
+
+- atributos
+  - filo (mamifero/anfiobio/etc)
+  - peso
+  - color
+- métodos
+  - correr
+  - comer
+  - dormir
+
+una **class** describe (en macro) lo que es el objeto... se puede generalizar
+al :racehorse: caballo como un animal, por lo tanto, la **class** puede
+llamarse animal
+
+```java
+public class Animal {
+
+    /* atributos */
+    String filo;
+    String nombre;
+    float peso;
+    String color;
+
+    public static void
+    main(String[] args)
+    {
+        /*
+         * en el primer ejemplo se crea a un caballo, y en el segundo,
+         * una rana;
+         *
+         * notar que ambos (animales) comparten atributos
+         *
+         */
+
+        /* creación del caballo */
+        Animal a1 = new Animal();
+        a1.filo = "mamifero";
+        a1.nombre = "caballo";
+        a1.peso = 3f;
+        a1.color = "cafe";
+
+        /* creación de la rana */
+        Animal a2 = new Animal();
+        a2.filo = "anfiobio";
+        a2.nombre = "rana";
+        a2.peso = 524.76f;
+        a2.color = "verde";
+
+        System.out.printf(
+            "animal: %s ; filo: %s ; peso: %.2fkg ; color: %s %n",
+            a1.nombre, a1.filo, a1.peso, a1.color);
+
+        System.out.printf(
+            "animal: %s ; filo: %s ; peso: %.2fkg ; color: %s %n",
+            a2.nombre, a2.filo, a2.peso, a2.color);
+
+    }
+}
+```
+
+:hash:
+
+```markdown
+animal: caballo ; filo: mamifero ; peso: 3.00kg ; color: cafe
+animal: rana ; filo: anfiobio ; peso: 524.76kg ; color: verde
+```
+
+:information_source: ejemplo de una calculadora se pueden encontrar
+[aqui](./prg008/src/)
+
+### :small_blue_diamond: modificadores de acceso
 
 [:information_source:](https://javadesdecero.es/poo/modificadores-de-acceso/)
 sirven para restringir el acceso a los miembros de una clase
 
-### :small_blue_diamond: características
-
 - ayudan a evitar el mal uso de un objeto
 - pueden evitar que se asignen valores incorrectos a esos datos
 
-| modificador de acceso | paquete | class | sub-class |
-| --------------------- | ------- | ----- | --------- |
-| public                | sí      | sí    | sí        |
-| private               | no      | sí    | no        |
+**classes**
+
+| modificador de acceso | paquete            | class              | sub-class          | todo               |
+| --------------------- | ------------------ | ------------------ | ------------------ | ------------------ |
+| public                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| default               | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                |
+
+**atributos y metodos**
+
+| modificador de acceso | paquete            | class              | sub-class          | todo |
+| --------------------- | ------------------ | ------------------ | ------------------ | ---- |
+| public                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | sí   |
+| default               | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:  |
+| private               | :x:                | :heavy_check_mark: | :x:                | :x:  |
+| protected             | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:  |
+
+- es una buena practica manejar variables **privadas**, ya que estas pueden
+  ser manipuladas con **getters** y **setters**
+
+### :small_blue_diamond: getters & setters
+
+son usados para proteger efectivamente los datos, específicamente al momento
+de crear nuevas clases
+
+los **setters** toman un parametro y se lo asignan al atributo, mientras que
+los **getters** son los que retornan el valor del atributo
+
+sintaxis para crear un **setter** y **getter**:
+
+- getter
+
+  - ```java
+    public getNombre() {}
+    ```
+
+- setter
+
+  - ```java
+    public void setNombre(tipo_dato arg) {}
+    ```
+
+### :small_blue_diamond: constructores
+
+son metodos especiales que se invocan cuando se crea un objeto, este puede ser
+utilizado para inicializar valores a los atributos
+
+### :small_blue_diamond: características
+
+- mismo nombre que la class
+- no tienen un return type
+- se pueden tener varios constructores
+  - estos se diferencian por la cantidad de parametros que reciben
+  - esto se llama "sobrecarga de metodos"
+
+```java
+public class Animal {
+
+    private String color;
+
+    /*
+     * en este caso, cuando se instancie el objeto sin algun argumento, por
+     * default se asignara el color "cafe" al atributo color
+     */
+
+    public Animal()
+    {
+        this.setColor("cafe");
+    }
+    /*
+     * por otro lado, cuando se instancie el objeto especificando algun
+     * argumento, por ejemplo "verde" se asignara dicho color al atributo color
+     */
+    public Animal(String c)
+    {
+        this.setColor(c);
+    }
+
+    /* setter */
+    public void
+    setColor(String c)
+    {
+        this.color = c;
+    }
+
+    /* getter */
+    public String
+    getColor(String c)
+    {
+        return this.color;
+    }
+}
+```
+
+:information_source: ejemplo de sobrecarga de metodos se encuentra
+[aqui](./prg010/src/)
 
 ## :large_orange_diamond: random
 
@@ -167,7 +343,8 @@ en el siguiente bloque de código se muestra un programa básico en Java
 ```java
 public class prog001 {
     public static void
-    main(String[] args) {
+    main(String[] args)
+    {
         System.out.println("hey");
     }
 }
