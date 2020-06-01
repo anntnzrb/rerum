@@ -1,4 +1,4 @@
-package App;
+package xyz;
 
 import java.util.Scanner;
 

@@ -1,3 +1,5 @@
+package xyz;
+
 public class Animal {
 
     private String color;

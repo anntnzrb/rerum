@@ -1,4 +1,4 @@
-package App;
+package xyz;
 
 public class Estudiante extends Persona {
 

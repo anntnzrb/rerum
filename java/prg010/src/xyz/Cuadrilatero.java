@@ -1,3 +1,5 @@
+package xyz;
+
 public class Cuadrilatero {
 
     /* atts */

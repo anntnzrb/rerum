@@ -1,3 +1,5 @@
+package xyz;
+
 public class ConsultaMedica {
     public static void
     main(String[] args)
