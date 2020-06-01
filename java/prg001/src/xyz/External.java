@@ -1,3 +1,5 @@
+package xyz;
+
 public class External {
     public static void
     main(String[] args)
