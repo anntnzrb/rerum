@@ -8,7 +8,7 @@
 - multi-tarea
 - WORE (Write Once Run Everywhere)
 
-## partes fundamentales de de Java
+## partes fundamentales de Java
 
 - el lenguaje en sí
 - la máquina virtual (VM)
@@ -70,12 +70,12 @@ la herramienta **javadoc**
     }
     ```
 
-- se ejecuta el comando `javadoc foo.java`
+- se ejecuta el comando `javadoc foo.java`:
 
   - ![](./lib/img002.png)
 
 - se generan distintos archivos, entre esos, algunos de tipo `hmtl`, si se abre
-  `index.html` se puede ver de forma **local** una vista general del programa
+  `index.html` se puede ver de forma **local** una vista general del programa:
 
   - ![](./lib/img003.png)
 
