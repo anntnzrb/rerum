@@ -42,7 +42,7 @@
 
 `Java Source Code` -> `Compilador` -> `Java Bytecode` -> `Ejecución`
 
-[](./lib/img001.png)
+![](./lib/img001.png)
 
 ## comentarios con javadoc
 
@@ -72,12 +72,12 @@ la herramienta **javadoc**
 
 - se ejecuta el comando `javadoc foo.java`
 
-  - [](./lib/img002.png)
+  - ![](./lib/img002.png)
 
 - se generan distintos archivos, entre esos, algunos de tipo `hmtl`, si se abre
   `index.html` se puede ver de forma **local** una vista general del programa
 
-  - [](./lib/img003.png)
+  - ![](./lib/img003.png)
 
 ## tarea
 
