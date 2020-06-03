@@ -1,25 +1,22 @@
 package xyz;
 
-import java.util.Scanner;
+/**
+ *  mostrar cual de los dos numeros ingresados es mayor
+ *
+ * @author j.a gonzalez
+ */
 
 public class ValorMayor {
-
+    /**
+     *
+     * @param args [0] y [1]: número 1 y número 2 correspondientemente
+     */
     public static void
     main(String[] args)
     {
-        /* vars */
-        int n1, n2;
+        int n1 = Integer.parseInt(args[0]);
+        int n2 = Integer.parseInt(args[1]);
 
-        /* scanner  */
-        Scanner scanf = new Scanner(System.in);
-
-        /* preguntar */
-        System.out.print("ingrese el primer número: ");
-        n1 = Integer.parseInt(scanf.nextLine());
-        System.out.print("ingrese el segundo número: ");
-        n2 = Integer.parseInt(scanf.nextLine());
-
-        /* resultados */
         System.out.printf(
             "Los números ingresados son %s y %s y el mayor es %s%n", n1, n2,
             (n1 > n2) ? n1 : n2);
