@@ -52,7 +52,7 @@ la herramienta **javadoc**
 - agregando la documentación correspondiente al programa anterior:
 
   - ```java
-      /**
+     /**
      * Clase foo "primer programa"
      * imprime un valor en consola
      *
@@ -90,3 +90,5 @@ mayor, finalmente debe mostrar en pantalla un mensaje, por ejemplo:
 
 Los números ingresados son a y b y el mayor es b
 ```
+
+[solución](./src/xyz/)
