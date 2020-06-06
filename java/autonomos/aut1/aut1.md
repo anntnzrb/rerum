@@ -1,6 +1,6 @@
-# lectura 1
+# autónomo #1
 
-## características
+## características de java
 
 - sencillo
 - orientado a objetos
