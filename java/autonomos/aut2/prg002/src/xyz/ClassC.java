@@ -27,7 +27,6 @@ public class ClassC {
         } while (i < 5);
 
         promedio /= 5;
-        System.out.printf(
-            "el promedio de los 5 numeros es: %.2f%n", promedio);
+        System.out.printf("el promedio de los 5 numeros es: %.2f%n", promedio);
     }
 }
