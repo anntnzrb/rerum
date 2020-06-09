@@ -33,8 +33,10 @@ public class ClassA {
                 System.out.printf("NO: %d es mayor al numero a adivinar%n", n);
             else if (n < rd_int)
                 System.out.printf("NO: %d es menor al numero a adivinar%n", n);
-            else
+            else {
                 System.out.printf("SI: %d es igual al numero a adivinar%n", n);
+                break;
+            }
 
             /* restar vidas y mostrar  */
             --vidas;
