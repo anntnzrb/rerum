@@ -24,5 +24,3 @@
 
 # objects/binaries
 /rust/*/target
-# misc
-*.lock
