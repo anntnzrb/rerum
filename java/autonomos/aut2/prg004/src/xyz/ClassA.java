@@ -40,5 +40,8 @@ public class ClassA {
             --vidas;
             System.out.printf("tiene %d vidas restantes%n", vidas);
         } while(vidas > 0);
+
+        /* cerrar scanner */
+        scanf.close();
     }
 }

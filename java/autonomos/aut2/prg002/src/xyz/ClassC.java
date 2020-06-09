@@ -28,5 +28,8 @@ public class ClassC {
 
         promedio /= 5;
         System.out.printf("el promedio de los 5 numeros es: %.2f%n", promedio);
+
+        /* cerrar scanner */
+        scanf.close();
     }
 }

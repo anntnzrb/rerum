@@ -30,5 +30,8 @@ public class ClassA {
             total = precio_kwh * kwh;
 
         System.out.printf("valor total a pagar: $ %.2f%n", total);
+
+        /* cerrar scanner */
+        scanf.close();
     }
 }

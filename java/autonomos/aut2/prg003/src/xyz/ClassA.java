@@ -60,5 +60,8 @@ public class ClassA {
             System.out.print("desea continuar (S/N):");
             opcion = scanf.nextLine();
         } while (opcion.toUpperCase().equals("S"));
+
+        /* cerrar scanner */
+        scanf.close();
     }
 }
