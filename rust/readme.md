@@ -42,12 +42,76 @@ as this guide will not cover this topic in detail
 
 ## variables
 
-variables in _Rust_ are inmutable by default
+**variables in are inmutable by default**, this is to take advantage of the safety
+and easy concurrency that _Rust_ offers. you are still able to make mutable
+variables by appending the `mut` keyword next to the `let` keyword
 
 - ```rust
   let x = 11;     // inmutable
   let mut y = 11; // mutable
   ```
+
+### constants
+
+just like **inmutable variables** constants are not allowed to change.
+
+- propierties:
+  - `const mut` cannot be used (this would defeat the purpose)
+  - must specify a data typ
+  - may be used in any scope, tbis is useful for variables
+    shared across many parts of the code
+  - may only be set to a **constant expression**, not the result of a
+    function call for example
+  - naming convention for **constants** is to use all uppercase with
+    underscore (`_`) words
+    - underscores can be inserted in numeric literals in order to improve
+      readability
+
+```rust
+const HEALTH: u8 = 100;
+const MAX_POINTS: u32 = 100_000;
+```
+
+### shadowing
+
+it is possible to declare a new variable with the same name as a
+previously-declared variable, the newly-declared-variable will shadow the old
+one, hence the name shadowing.
+
+```rust
+fn main() {
+    let x = 5;     // declaring variable `x` for the first time | x = 5
+
+    let x = x + 1; // second time | (new x) = 6
+
+    let x = x - 2; // third time | (new new x) = 4
+
+    println!("value of x is: {}", x);
+}
+```
+
+#### shadowing vs mutable variables
+
+this may be confusing, but this this two are different; by using the `let`
+keyword to perform shadowing, you are now able to transform the value, changing
+the data type is now even possible maintaining the _inmutability_ trait of the
+variable
+
+there are many use casesfor shadowing, it really depends on what you are doing.
+
+here's a simple example:
+
+```rust
+let ident = "    ";      // 4 spaces | this is a string
+let ident = ident.len(); // len() returns the amount of characters of the string
+```
+
+on the other hand this wouldn't be possible:
+
+```rust
+let mut ident = "    "; // initially a variable of the String type
+ident = ident.len();    // somehow wants to change from type String -> int ???
+```
 
 ## references
 
@@ -64,3 +128,7 @@ variables in _Rust_ are inmutable by default
 
 - :black_nib::
   - author(s)
+
+```
+
+```
