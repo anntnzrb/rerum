@@ -4,3 +4,4 @@
 
 - [Java](./java)
 - [C](./c)
+- [Rust](./rust)
