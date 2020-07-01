@@ -19,7 +19,7 @@ _Leonardo da Vinci_, un genio en su tiempo, fue autor de muchos inventos que
 cambiaron la forma de ver al mundo. esta colección de inventos es conocida como
 _El Códice Atlántico_.
 
-el androide de Leonardo era un invento con el find de replicar a un ser humano.
+el androide de Leonardo era un invento con el fin de replicar a un ser humano.
 _Leonardo_ inventó un un robot en forma de león con el propósito de enseñarle
 al Rey de Francia un obsequio sorprendente. éste león caminaba por el centro
 del salón sin cables y sin ayuda, al acercarse al rey, éste abrió el pecho y
@@ -100,9 +100,9 @@ entre algunas de las invenciones que involucran el empleo de agua se tienen:
   - los orificios hacían que el agua se regara y así se podía medir el tiempo
     transcurrido
 
-## Al-Qalasadi
+## Al Jazari
 
-Al-Qalasadi, basándose en los _Alejandrinos_, creó una de las máquinas antiguas
+Al Jazari, basándose en los _Alejandrinos_, creó una de las máquinas antiguas
 automáticas mas complejas e impresionantes para medir el tiempo.
 
 era un reloj que podía realizar distintas acciones en distintos intervalos de
