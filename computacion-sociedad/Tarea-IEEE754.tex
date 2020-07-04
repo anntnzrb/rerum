@@ -1,0 +1,250 @@
+%******************************************************************************
+% preamble
+%******************************************************************************
+% type/format
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{
+    letterpaper,
+    margin=1in
+}
+% spacing | 1.6 === 2.0
+\renewcommand{\baselinestretch}{1.6}
+% font
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+% language & encoding
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+% support images
+\usepackage{graphicx}
+
+% header & footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lfoot{\includegraphics[scale=0.40]{$HOME/downloads/espol-logo_footer.png}}
+
+% title/author/date
+\newcommand{\cTitle}{\LARGE{Formato IEEE-754}}
+\newcommand{\cInstitution}{\textbf{Escuela Superior Politécnica del Litoral}}
+\newcommand{\cClass}{Computación y Sociedad}
+\newcommand{\cClassID}{CCPG1039}
+\newcommand{\cTerm}{\textbf{I PAO - 2020}}
+\newcommand{\cInstructor}{Lissette Cabello}
+\title{
+    \centering
+    \includegraphics[scale=0.50]{$HOME/downloads/espol-logo_title.png}\\
+    \textbf{\cTitle}
+    \vspace{1in}
+}
+\author{
+    \emph{Juan Antonio González Orbe}\\
+    \normalsize \cInstitution\\
+    \normalsize \textbf{\cClassID}: \cClass\\
+    \normalsize \textbf{Instructor}: \cInstructor\\
+    \normalsize \cTerm
+}
+\date{
+    \vspace{2in}
+    \centering
+    \includegraphics[scale=0.15]{$HOME/downloads/espol_fiec-logo.png}\\
+    \emph{\today}
+}
+
+% citation style
+\usepackage[
+backend=biber,
+style=ieee,
+citestyle=numeric
+]{biblatex}
+\addbibresource{$HOME/lib/docs/biblio.bib}
+
+%******************************************************************************
+% document itself
+%******************************************************************************
+\begin{document}
+% title
+\maketitle
+% TOC
+\clearpage
+\tableofcontents
+\clearpage
+
+\section{Formato estándar IEEE-754}%
+\label{sec:formato_estándar_ieee_754}
+
+El formato \emph{IEEE-754} es un estándar técnico para representar números en
+la notación \textit{coma flotante}. Esta norma fue constituida en el año 1985
+por la \textit{IEEE}, que por sus siglas en inglés significa
+``\textit{Institute of Electrical Electronics Engineers}''.
+El propósito de este formato fue resolver distintos problemas que existían en
+otras implementaciones de la notación \textit{coma flotante} que habían sido
+desarrolladas en el pasado, entre algunos de los problemas estaba presente
+la portabilidad. \cite{ieee754}
+
+\subsection{Representación}%
+\label{sub:representación}
+
+El formato \emph{IEEE} se puede representa con $32-bits$ de los cuales, 
+$23 bits$ forman la \textit{mantisa}, $8 bits$ forman el \textit{exponente} y 
+el $1 bit$ que resta simboliza el \textit{signo} $+/-$ (positivo o negativo)
+del número.
+
+Sea un número ejemplar $11.87$ (positivo), el primer \textit{bit} será $0$,
+mientras que si el número es negativo, sea $-45.36$, el primer \textit{bit}
+será $1$. \cite{dec2ieee754yt}
+
+\subsubsection{Ejemplo}%
+\label{ssub:ejemplo}
+
+Sea el número $-121.5$ para ejemplificar, se demostrará su valor en el formato
+\textit{IEEE-74} que es $11000010111100110000000000000000$.
+
+\begin{enumerate}
+    \setlength{\parskip}{-8pt}
+    \item Obtener el primer \textit{bit} 
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item El primer \textit{bit} será $1$ ya que el número es negativo
+        \end{itemize}
+    \item Transformar el número a binario
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item $-121.5$ en binario es $-1111001.1$
+        \end{itemize}
+    \item Correr la coma hasta tener solo $1$ número en la parte entera
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item La coma se desplazó $6$ unidades
+            \item $-1.1110011$
+        \end{itemize}
+    \item Transformar el exponente a binario
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item Se suma $6 + 127$, que es el número de conversión para el
+                formato \textit{IEEE-754}, resultando en $133$
+            \item $133$ en binario es $10000101$
+        \end{itemize}
+    \item Obtener la \textit{mantisa} 
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item Teniendo en cuenta el número obtenido anteriormente, 
+                $-1.1110011$, se consideran los números a partir de la coma,
+                ésto es $1110011$
+            \item Se completa con $0$'s hasta completar $23$ dígitos.
+            \item La \textit{mantisa} es $11100110000000000000000$
+        \end{itemize}
+    \item Obtener el número en el formato \textit{IEEE-754} 
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item Se concatena el primer \textit{bit} más los \textit{8 bits} 
+                del exponente más los \textit{23 bits} restantes de la mantisa
+            \item Resultando en $11000010111100110000000000000000$
+        \end{itemize}
+\end{enumerate}
+
+\section{Tarea}%
+\label{sec:tarea}
+
+Se solicita que cada estudiante realice la conversión al formato 
+\textit{IEEE-754} a partir de 2 números decimales asignados por el instructor.
+
+\subsection{Primer número}%
+\label{sub:primer_número}
+
+Sea $0.774$ el número solicitado:
+\begin{enumerate}
+    \setlength{\parskip}{-8pt}
+    \item Obtener el primer \textit{bit} 
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item El primer \textit{bit} será $0$ ya que el número es positivo
+        \end{itemize}
+    \item Transformar el número a binario
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item $0.774$ en binario es $0.1100011000100100111$
+        \end{itemize}
+    \item Correr la coma hasta tener solo $1$ número en la parte entera
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item La coma se desplazó $1$ unidad hacia la derecha ($-1$)
+            \item $1.100011000100100111$
+        \end{itemize}
+    \item Transformar el exponente a binario
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item Se suma $-1 + 127$, que es el número de conversión para el
+                formato \textit{IEEE-754}, resultando en $126$
+            \item $126$ en binario es $01111110$
+        \end{itemize}
+    \item Obtener la \textit{mantisa} 
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item Teniendo en cuenta el número obtenido anteriormente, 
+                $1.100011000100100111$, se consideran los números a partir de 
+                la coma, ésto es $100011000100100111$
+            \item Se completa con $0$'s hasta completar $23$ dígitos.
+            \item La \textit{mantisa} es $10001100010010011100000$
+        \end{itemize}
+    \item Obtener el número en el formato \textit{IEEE-754} 
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item Se concatena el primer \textit{bit} más los \textit{8 bits} 
+                del exponente más los \textit{23 bits} restantes de la mantisa
+            \item Resultando en $00111111010001100010010011100000$
+        \end{itemize}
+\end{enumerate}
+
+\subsection{Segundo número}%
+\label{sub:segundo}
+
+Sea $-0.851$ el número solicitado:
+\begin{enumerate}
+    \setlength{\parskip}{-8pt}
+    \item Obtener el primer \textit{bit} 
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item El primer \textit{bit} será $1$ ya que el número es negativo
+        \end{itemize}
+    \item Transformar el número a binario
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item $0.851$ en binario es $0.1101100111011011001$
+        \end{itemize}
+    \item Correr la coma hasta tener solo $1$ número en la parte entera
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item La coma se desplazó $1$ unidad hacia la derecha ($-1$)
+            \item $1.101100111011011001$
+        \end{itemize}
+    \item Transformar el exponente a binario
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item Se suma $-1 + 127$, que es el número de conversión para el
+                formato \textit{IEEE-754}, resultando en $126$
+            \item $126$ en binario es $01111110$
+        \end{itemize}
+    \item Obtener la \textit{mantisa} 
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item Teniendo en cuenta el número obtenido anteriormente, 
+                $1.101100111011011001$, se consideran los números a partir de 
+                la coma, ésto es $101100111011011001$
+            \item Se completa con $0$'s hasta completar $23$ dígitos.
+            \item La \textit{mantisa} es $10110011101101100100000$
+        \end{itemize}
+    \item Obtener el número en el formato \textit{IEEE-754} 
+        \begin{itemize}
+            \setlength{\parskip}{-8pt}
+            \item Se concatena el primer \textit{bit} más los \textit{8 bits} 
+                del exponente más los \textit{23 bits} restantes de la mantisa
+            \item Resultando en $10111111010110011101101100100000$
+        \end{itemize}
+\end{enumerate}
+
+\clearpage
+\printbibliography
+\end{document}
