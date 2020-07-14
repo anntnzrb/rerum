@@ -1,4 +1,4 @@
-# aportes Medievales
+# aportes medievales
 
 la Edad Media se describe frecuentemente como un período de:
 
