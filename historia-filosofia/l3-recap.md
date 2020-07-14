@@ -14,7 +14,7 @@ el ámbito de la tecnología medieval era dominado por la civilización _China_ 
 _Islámica_; los relojes chinos y árabes denominados _clepsidras_ utilizaban el
 flujo del agua para medir el tiempo.
 
-## instrumentos de Medición
+## instrumentos de medición
 
 ### el reloj astronómico
 
