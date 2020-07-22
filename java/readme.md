@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 MD024 MD026 -->
+
 # notas de Java (poo)
 
 ## :large_orange_diamond: tipos de datos
@@ -236,14 +238,14 @@ sirven para restringir el acceso a los miembros de una clase
 - ayudan a evitar el mal uso de un objeto
 - pueden evitar que se asignen valores incorrectos a esos datos
 
-**classes**
+#### classes
 
 | modificador de acceso | paquete            | class              | sub-class          | todo               |
 | --------------------- | ------------------ | ------------------ | ------------------ | ------------------ |
 | public                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | default               | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                |
 
-**atributos y metodos**
+#### atributos y metodos
 
 | modificador de acceso | paquete            | class              | sub-class          | todo |
 | --------------------- | ------------------ | ------------------ | ------------------ | ---- |
@@ -331,6 +333,78 @@ public class Animal {
 
 :information_source: ejemplo de sobrecarga de metodos se encuentra
 [aqui](./prg010/src/)
+
+### :small_blue_diamond: clases abstractas
+
+las clases abstractas pueden tener:
+
+- métodos regulares (concretos y definidos por `{}`) (con cuerpo)
+- métodos abstractos (sin cuerpo)
+- mezcla de los dos anteriores
+
+#### ejemplo
+
+si una clase tiene un método abstracto, entonces la clase automáticamente debe
+ser declara como abstracta de igual manera
+
+```java
+abstract class A {
+    /* metodo abstracto */
+    abstract public void m();
+
+    /* metodo regular (concreto) */
+    public void m2() {
+        foo();
+    }
+}
+```
+
+_(sea el ejemplo anterior)_
+debido a que los métodos abstractos no están implementados, es necesario
+implementarlos en clases concretas, de hecho, si no se implementan, habrá
+un error
+
+```java
+class B extends A {
+    public void m() {
+        /* este metodo es heredado de la clase abstracta A */
+        bar();
+    }
+}
+```
+
+se puede crear una clase abstracta sin la necesidad de implementar métodos
+abstractos (por ende, que contenga métodos concretos)
+
+```java
+abstract class A {
+    private int i = 10;
+
+    public void method() {
+        foo();
+    }
+}
+```
+
+una clase abstracta puede extender a otra clase abstracta sin proveer alguna
+implementación de sus métodos abstractos.
+
+```java
+abstract class A {
+    abstract public void m();
+}
+
+abstract class B extends A {
+    /* algo */
+}
+```
+
+una clase abstracta no puede ser instanciada, porque fue creada con el
+propósito de ser extendida por una clase concreta
+
+> :exclamation: no se debe declarar a un método abstracto como `private` porque
+> esto haría que el método sea inaccesible por la clase concreta que extiende a
+> la clase abstracta que tiene como propósito implementar dicho método
 
 ## :large_orange_diamond: random
 
@@ -430,9 +504,5 @@ from a single line. For example when you enter `20 John` in a single line.
 :link: [Java Programming Styles](https://youtu.be/OXYT01qrDrc)
 :pencil:[Neso Academy](https://www.youtube.com/user/nesoacademy/)
 
-:link: [suckless.org/coding_style](https://suckless.org/coding_style/)
-
 :link: [c-code-style](https://github.com/MaJerle/c-code-style)
 :pencil:[MaJerle](https://github.com/MaJerle)
-
-:link: [Hungarian Notation to Java](https://www.developer.com/java/ent/article.php/615891/Applying-Hungarian-Notation-to-Java-programs-Part-1.htm)
