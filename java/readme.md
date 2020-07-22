@@ -366,8 +366,8 @@ un error
 
 ```java
 class B extends A {
+    /* este metodo es heredado de la clase abstracta A */
     public void m() {
-        /* este metodo es heredado de la clase abstracta A */
         bar();
     }
 }
@@ -380,14 +380,14 @@ abstractos (por ende, que contenga métodos concretos)
 abstract class A {
     private int i = 10;
 
-    public void method() {
+    public void z() {
         foo();
     }
 }
 ```
 
 una clase abstracta puede extender a otra clase abstracta sin proveer alguna
-implementación de sus métodos abstractos.
+implementación de sus métodos abstractos
 
 ```java
 abstract class A {
