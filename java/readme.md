@@ -406,6 +406,116 @@ propósito de ser extendida por una clase concreta
 > esto haría que el método sea inaccesible por la clase concreta que extiende a
 > la clase abstracta que tiene como propósito implementar dicho método
 
+### :small_blue_diamond: interfaces
+
+una interfaz es una clase abstracta, los métodos declarados son implícitamente
+abstractos, por lo cual, no se debe realizar la implementación de métodos
+
+las interfaces son declaras implícitamente como `public` y `abstract`, por lo
+cual es redundante re-escribir dichas _keywords_
+
+al igual que las clases abstractas, las interfaces no se pueden instanciar
+
+#### ejemplo
+
+```java
+interface Matematicas {
+    /* metodos publicos y abstractos por default */
+    void sumar(int a, int b);
+    void restar(int a, int b);
+}
+```
+
+_(sea a partir del ejemplo anterior)_
+una clase puede implementar a una interfaz, se debe realizar la implementación
+de los métodos
+
+```java
+class A implements Matematicas {
+    public void sumar(int a, int b) {
+        System.out.println(a + b);
+    }
+
+    public void restar(int a, int b) {
+        System.out.println(a - b);
+    }
+}
+```
+
+las variables definidas en las interfaces son implícitamente
+`public final static`, por ende, éstas son consideradas constantes
+
+```java
+interface A {
+    /* variable 'a' cuyo valor no se puede cambiar */
+    int a = 10;
+}
+```
+
+una interfaz puede implement's otras interfaces sin la necesidad de realizar
+la implementación de sus métodos
+
+```java
+interface A {
+    void foo();
+}
+
+interface B {
+    void bar();
+}
+
+interface C extends A, B {
+/* */
+}
+```
+
+una clase puede implementar múltiples interfaces, pero se debe realizar la
+implementación de todos los métodos de las distintas interfaces
+
+```java
+interface A {
+    void foo();
+}
+
+interface B {
+    void bar();
+}
+
+interface C {
+    void baz();
+}
+
+class D implements A, B, C {
+    public void foo() {
+        System.out.println("A");
+    }
+
+    public void bar() {
+        System.out.println("B");
+    }
+
+    public void baz() {
+        System.out.println("C");
+    }
+}
+```
+
+una clase abstracta puede implementar una interfaz sin la necesidad de
+implementar sus métodos. esto es posible ya que las clases abstractas son
+funciones esqueleto (sin cuerpo) que están en la posibilidad de tener de igual
+manera métodos sin algún cuerpo
+
+```java
+interface Matematicas {
+    void sumar(int a, int b);
+    void restar(int a, int b);
+}
+
+abstract class A implements Math {
+/* */
+}
+```
+
 ## :large_orange_diamond: random
 
 :information_source: sección donde se puede encontrar contenido misceláneo
