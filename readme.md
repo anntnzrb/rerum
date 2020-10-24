@@ -2,6 +2,7 @@
 
 ## languages
 
-- [Java](./java)
 - [C](./c)
+- [Haskell](./haskell)
+- [Java](./java)
 - [Rust](./rust)
