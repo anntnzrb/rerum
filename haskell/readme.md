@@ -64,13 +64,86 @@ definition is: `head :: [a] -> a`
 - these functions are called _polymorphic_
 - parameters usually denoted with letters `a`, `b`, `c`...
 
+### list comprehensions
+
+take all numbers from 1 to 10 and multiply them by 2
+
+- ```hs
+  -- approach 1
+  take 10 [2, 4..]
+
+  -- approach 2
+  [x * 2 | x <- [1..10]]
+  ```
+
+  - `[2,4,6,8,10,12,14,16,18,20]`
+
+take all numbers from 1 to 100 which are not divisble by 5 and 3
+
+- ```hs
+  [x | x <- [1..100], mod x 5 == 0 && mod x 3 == 0]
+  ```
+
+  - `[15,30,45,60,75,90]`
+
+interesting problem:
+
+- find the right triangle ($c^2 = a^2 + b^2$)
+
+  - lenghts of all three sides are integers and less than `10`
+  - the perimeter of the triangle is `24`
+
+- ```hs
+  [ (a, b, c)
+  | c <- [1 .. 10]
+  , a <- [1 .. c]
+  , b <- [1 .. c]
+  , a + b + c == 24
+  , a ^ 2 + b ^ 2 == c ^ 2
+  ]
+  ```
+- `[(6,8,10),(8,6,10)]`
+
+### pattern matching
+
+quick function that sums two vectors using _tuples_
+
+- ```hs
+  {- nice -}
+  addVec :: (Double, Double) -> (Double, Double) -> (Double, Double)
+  addVec a b = (fst a + fst b, snd a + snd b)
+
+  {-
+     nicer;
+     this one makes clear the parameters are tuples, increases readability
+  -}
+  addVec' :: (Double, Double) -> (Double, Double) -> (Double, Double)
+  addVec' (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
+  ```
+
+  - `addVec (1, 1) (5, 7)` or `addVec' (1, 1) (5, 7)` = `(6.0, 8.0)`
+
+### guards
+
+similar to `if-else` statements, quick example of a **BMI** calculator $BMI =
+\frac {weight} {height^2}$
+
+- ```hs
+  bmiCalc :: Double -> String
+  bmiCalc bmi | bmi <= 18.5 = "underweight"
+              | bmi <= 25.0 = "normal, good"
+              | bmi <= 30.0 = "fat"
+              | bmi < 0.0   = "invalid"
+              | otherwise   = "obese"
+  ```
+
+  - `bmiCalc (70/1.88^2)` = `"normal, good"`
+
 ### comments
 
 - ```hs
   -- this is a single line comment
-  ```
 
-- ```hs
   {-
   This is a multi-line comment
   ...
@@ -134,12 +207,13 @@ can find Haskell's [here](https://0x0.st/ZcgX)
 
 ## references
 
-| :books:                                                                               | :scroll:        | :black_nib:                           |
-| ------------------------------------------------------------------------------------- | --------------- | ------------------------------------- |
-| :gb: [_Tony Hoare_](https://0x0.st/ZqBs)                                              | :speaking_head: | [Wikiquote](https://0x0.st/ZqBr)      |
-| :gb: [_Learn You a Haskell for Great Good!: A Beginner's Guide_](https://0x0.st/ZaHF) | :pencil:        | [Miran Lipovaca]                      |
-| :gb: [_Getting Started With Haskell_](https://0x0.st/ZAfv)                            | :movie_camera:  | [DistroTube](https://0x0.st/ZAfx)     |
-| :es: [_Curso de Haskell desde cero_](https://0x0.st/ZqaR)                             | :movie_camera:  | [David Giordana](https://0x0.st/ZqBz) |
+| :books:                                                           | :scroll:        | :black_nib:                           |
+| ----------------------------------------------------------------- | --------------- | ------------------------------------- |
+| :gb: [_Tony Hoare_](https://0x0.st/ZqBs)                          | :speaking_head: | [Wikiquote](https://0x0.st/ZqBr)      |
+| :gb: [_Learn You a Haskell for Great Good!_](https://0x0.st/ZaHF) | :pencil:        | [Miran Lipovaca](https://0x0.st/ZaK4) |
+| :gb: [_Haskell Tutorial_](https://0x0.st/ZSjj)                    | :movie_camera:  | [Derek Banas](https://0x0.st/ZSj9)    |
+| :gb: [_Getting Started With Haskell_](https://0x0.st/ZAfv)        | :movie_camera:  | [DistroTube](https://0x0.st/ZAfx)     |
+| :es: [_Curso de Haskell desde cero_](https://0x0.st/ZqaR)         | :movie_camera:  | [David Giordana](https://0x0.st/ZqBz) |
 
 ## notes
 
