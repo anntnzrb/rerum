@@ -73,24 +73,24 @@ take all numbers from 1 to 10 and multiply them by 2
   take 10 [2, 4..]
 
   -- approach 2
-  [x * 2 | x <- [1..10]]
+  [x * 2 | x <- [1 .. 10]]
   ```
 
-  - `[2,4,6,8,10,12,14,16,18,20]`
+  - `[2, 5, 6, 8, 10, 12, 14, 16, 18, 20]`
 
 take all numbers from 1 to 100 which are not divisble by 5 and 3
 
 - ```hs
-  [x | x <- [1..100], mod x 5 == 0 && mod x 3 == 0]
+  [x | x <- [1 .. 100], mod x 5 == 0 && mod x 3 == 0]
   ```
 
-  - `[15,30,45,60,75,90]`
+  - `[15, 30, 45, 60, 75, 90]`
 
 interesting problem:
 
 - find the right triangle ($c^2 = a^2 + b^2$)
 
-  - lenghts of all three sides are integers and less than `10`
+  - lengths of all three sides are integers and less than `10`
   - the perimeter of the triangle is `24`
 
 - ```hs
@@ -153,6 +153,9 @@ similar to `if-else` statements, quick example of a **BMI** calculator $BMI =
 
 ## functions
 
+- function signature is not needed
+  - ... but it is recommended as it easier to spot what the function ndoes
+
 here's a trivial math function called `f` which receives `2` arguments,
 in this case, two integer values, i.e `5` or `7` per se:
 
@@ -182,6 +185,36 @@ f x y = x + y
   - this means you can create a function called `g` like this:
     `g :: Int -> Int -> Int -> Int -> Int -> Int -> Int -> Int`
     which receives `7` parameters
+
+### polymorphism & overloading
+
+#### polymorphism
+
+_polymorphic functions_ are able to take any data type
+
+the `length` function is an example of a _polymorphic function_ which takes a
+list of any type and returns an `Int`:
+
+- `length :: [a] -> Int`
+  - `length [1, 2, 3]` == `3`
+  - `length [True, False]` == `2`
+
+#### overloading
+
+a function is called an _overloaded function_ if its type contains a
+class-restriction
+
+the `sum` function is an example of an overloaded function which is restricted
+to take a value `a` of the `Num` class:
+
+- `sum :: (Num a) ==> [a] -> a`
+  - `sum [1, 2, 3]` == `6`
+  - `sum [1.1, 2.2, 3.3]` == `6.6`
+
+the same logic is applied for the arithmetic operators
+
+- `(-) :: (Num a) => a -> a -> a`
+- `(*) :: (Num a) => a -> a -> a`
 
 ## naming conventions
 
@@ -226,10 +259,10 @@ on **Haskell**
 
 - ```c
   int
-  sum(int *arr, int lenght)
+  sum(int *arr, int length)
   {
       int sum = 0;
-      for (int i = 0; i < lenght; ++i) { sum += arr[i]; }
+      for (int i = 0; i < length; ++i) { sum += arr[i]; }
 
       return sum;
   }
