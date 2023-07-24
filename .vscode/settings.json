@@ -1,5 +1,6 @@
 {
     "rust-analyzer.linkedProjects": [
-        "./rust/sheehs/Cargo.toml"
+        "./rust/sheehs/Cargo.toml",
+        "./rust/espol-tools/Cargo.toml"
     ]
 }
